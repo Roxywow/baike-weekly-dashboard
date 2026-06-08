@@ -2,7 +2,6 @@
 <html lang="zh">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0; url=http://10.1.114.81:8765/business-overview.html">
   <title>百科用户运营周报 · 跳转中…</title>
   <style>
     body { font-family: -apple-system, 'PingFang SC', sans-serif; display: flex;
@@ -13,12 +12,22 @@
     p { opacity: .8; font-size: 14px; }
     a { color: #fff; }
   </style>
+  <script>
+    // 带时间戳跳转，URL 每次不同 → 强制绕过浏览器/代理对 business-overview.html 的缓存
+    var BASE = "http://10.1.114.81:8765/business-overview.html";
+    var TARGET = BASE + "?_t=" + Date.now();
+    location.replace(TARGET);
+  </script>
 </head>
 <body>
   <div class="card">
     <h1>📊 百科用户运营周报</h1>
-    <p>正在跳转到看板… <a href="http://10.1.114.81:8765/business-overview.html">点此直达</a></p>
+    <p>正在跳转到看板… <a href="http://10.1.114.81:8765/business-overview.html" id="kw-direct">点此直达</a></p>
     <p style="font-size:11px;opacity:.5;margin-top:20px">如无法访问请确认已连公司内网</p>
   </div>
+  <script>
+    var d = document.getElementById("kw-direct");
+    if (d) d.href = BASE + "?_t=" + Date.now();
+  </script>
 </body>
 </html>
