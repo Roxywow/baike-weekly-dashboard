@@ -1,3 +1,33 @@
-<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8">
-<title>百科用户运营周报</title></head><body style="font-family:-apple-system,sans-serif;padding:40px;">
-<h2>⚠️ 看板暂时离线</h2><p>Mac 未检测到内网 IP，请确认已连接公司网络后刷新。</p></body></html>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <title>百科用户运营周报 · 跳转中…</title>
+  <style>
+    body { font-family: -apple-system, 'PingFang SC', sans-serif; display: flex;
+           align-items: center; justify-content: center; height: 100vh; margin: 0;
+           background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); color: #fff; }
+    .card { text-align: center; padding: 40px; }
+    h1 { font-size: 22px; margin-bottom: 12px; }
+    p { opacity: .8; font-size: 14px; }
+    a { color: #fff; }
+  </style>
+  <script>
+    // 带时间戳跳转，URL 每次不同 → 强制绕过浏览器/代理对 business-overview.html 的缓存
+    var BASE = "http://192.168.31.157:8765/business-overview.html";
+    var TARGET = BASE + "?_t=" + Date.now();
+    location.replace(TARGET);
+  </script>
+</head>
+<body>
+  <div class="card">
+    <h1>📊 百科用户运营周报</h1>
+    <p>正在跳转到看板… <a href="http://192.168.31.157:8765/business-overview.html" id="kw-direct">点此直达</a></p>
+    <p style="font-size:11px;opacity:.5;margin-top:20px">如无法访问请确认已连公司内网</p>
+  </div>
+  <script>
+    var d = document.getElementById("kw-direct");
+    if (d) d.href = BASE + "?_t=" + Date.now();
+  </script>
+</body>
+</html>
